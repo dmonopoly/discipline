@@ -10,17 +10,17 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from secret import *
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'iz7l%kw*2ikkp9uoh*6uh8w!w$_(@huaow9ykhk#ehz#g+=i=p'
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+if os.path.isfile('production.py'):
+  DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -90,3 +90,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Production
+STATIC_ROOT = '/django-envs/1.6.1/static/'

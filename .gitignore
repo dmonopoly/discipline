@@ -3,3 +3,6 @@ staticfiles
 *.swp
 *.vim
 .DS_Store
+
+production.py
+secret.py
