@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+<style type="text/css">
+.button {
+  text-align: center;
+  border: 1px solid blue;
+  background-color:#ededed;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:200px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}.button:hover {
+  background-color:#dfdfdf;
+  cursor: pointer;
+}.button:active {
+  background-color:yellow;
+  position:relative;
+  top:1px;
+}
+</style>
+{% endblock head %}
+
+{% block content %}
+<div style="text-align:center">
+  <a href="" class="button" style="font-size:30px">Focus</a>
+</div>
+{% endblock content %}
