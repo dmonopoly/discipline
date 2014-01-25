@@ -1,0 +1,29 @@
+#header {
+  margin:20px; text-align:center; font:40px Georgia, serif
+}#subheader {
+  font-size:20px;
+}
+#focus_button {
+  text-align: center;
+  border: 1px solid blue;
+  background-color:#ededed;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:30px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}#focus_button:hover {
+  background-color:#dfdfdf;
+  cursor: pointer;
+}#focus_button:active {
+  background-color:yellow;
+  position:relative;
+  top:1px;
+}

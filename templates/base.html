@@ -1,13 +1,15 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
   <head>
     <title>Discipline</title>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}styles.css" >
     {% block head %} {% endblock %}
   </head>
   <body>
-    <div id="header" style="margin:20px; text-align:center; font:40px Georgia, serif">
+    <div id="header">
       Discipline
-      <div id="subheader" style="font-size:20px">
+      <div id="subheader">
         Block certain sites.
       </div>
     </div>

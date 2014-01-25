@@ -1,6 +1,4 @@
 """
-Django settings for discipline project.
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
 
@@ -13,9 +11,6 @@ import os
 from secret import *
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
