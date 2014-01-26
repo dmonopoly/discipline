@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class MyUser(models.Model):
   user = models.OneToOneField(User)
+  username = models.CharField(max_length=25)
   ip_address = models.CharField(max_length=25)
   focusing = models.BooleanField(default=False)
 #   last_pass_time = models.DateTimeField()
@@ -27,3 +29,11 @@ class Block(models.Model):
   def __unicode__(self):
     return "Person %s | %s-%s | %s \n" % (self.person, self.start_time,
         self.end_time, self.category)
+
+class Site(models.Model):
+  url = models.CharField(max_length=1000)
+  hostname = models.CharField(max_length=200)
+  created_at = models.DateTimeField(default=timezone.now())
+
+  def __unicode__(self):
+    return hostname + ", " + url
