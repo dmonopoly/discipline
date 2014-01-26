@@ -79,7 +79,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Production
-STATIC_ROOT = '/django-envs/1.6.1/static/'
+STATIC_ROOT = '/home/david/venv-1.6.1/static'
 
 # Use production.py for production-specific settings to override things here.
 if os.path.isfile('production.py'):
