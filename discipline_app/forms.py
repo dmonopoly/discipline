@@ -5,5 +5,8 @@ from django import forms
 class UserCreateForm(UserCreationForm):
   class Meta:
     model = User
+#     widgets = {
+#         'username': forms.TextInput(attrs={'class': 'elegant_text_field'}),
+#     }
     fields = ("username",)
 

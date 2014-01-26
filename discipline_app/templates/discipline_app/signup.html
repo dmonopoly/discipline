@@ -4,8 +4,25 @@
 {% endblock head %}
 
 {% block content %}
+<div style="text-align:center">
   <form action="/discipline_app/signup/" method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
+    {{ form.non_field_errors }}
+    <div class="field_wrapper">
+      {{ form.username.errors }}
+      <label for="id_username">Username:</label>
+      {{ form.username }}
+    </div>
+    <div class="field_wrapper">
+      {{ form.password1.errors }}
+      <label for="id_password1">Password:</label>
+      {{ form.password1 }}
+    </div>
+    <div class="field_wrapper">
+      {{ form.password2.errors }}
+      <label for="id_password2">Password Confirmation:</label>
+      {{ form.password2 }}
+    </div>
+    <input id="submit" type="submit" value="Submit" />
   </form>
+</div>
 {% endblock content %}

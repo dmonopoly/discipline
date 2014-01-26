@@ -27,3 +27,46 @@
   position:relative;
   top:1px;
 }
+
+/* Form stuff */
+.field_wrapper {
+
+}
+.field_wrapper input { // uses .rounded
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  height: 24px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16px;
+  color: black;
+  border: 1px solid #ccc;
+}
+.field_wrapper input:hover, input:focus {
+  border: 1px solid #ddd;
+}
+#submit {
+  text-align: center;
+  border: 1px solid blue;
+  background-color:#dcdcdc;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #dcdcdc;
+  display:inline-block;
+  color:#777777;
+  font-family:arial;
+  font-size:24px;
+  font-weight:bold;
+  padding:4px 20;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #ffffff;
+}#submit:hover {
+  background-color:#eee;
+  cursor: pointer;
+}#submit:active {
+  background-color:yellow;
+  position:relative;
+  top:1px;
+}
