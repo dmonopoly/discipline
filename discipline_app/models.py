@@ -9,12 +9,21 @@ class MyUser(models.Model):
 #   last_pass_time = models.DateTimeField()
 
   def __unicode__(self):
-    return "User %s | IP: %s | Focusing: %s" % (self.user.username,
+    return "%s | IP: %s | Focusing: %s" % (self.user.username,
         self.ip_address, self.focusing)
+
+class Category(models.Model):
+  name = models.CharField(max_length=25)
+
+  def __unicode__(self):
+    return self.name
 
 class Block(models.Model):
   person = models.ForeignKey(MyUser)
+  start_time = models.DateTimeField()
+  end_time = models.DateTimeField()
+  category = models.ForeignKey(Category)
 
   def __unicode__(self):
-    return "Block for \n" + str(self.person)
-
+    return "Person %s | %s-%s | %s \n" % (self.person, self.start_time,
+        self.end_time, self.category)
