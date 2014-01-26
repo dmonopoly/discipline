@@ -12,10 +12,8 @@ from secret import *
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# This is overridden by production.py, if it exists.
 DEBUG = True
-if os.path.isfile('production.py'):
-  DEBUG = False
 
 TEMPLATE_DEBUG = True
 
@@ -53,16 +51,9 @@ WSGI_APPLICATION = 'discipline.wsgi.application'
 
 DATABASES = {
     'default': {
-      # sqlite
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-      'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-      'NAME': 'discipline_db', # Or path to database file if using sqlite3.
-      # The following settings are not used with sqlite3:
-      'USER': 'david',
-      'PASSWORD': '',
-      'HOST': 'localhost', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-      'PORT': '', # Set to empty string for default.
+     # sqlite
+    'ENGINE': 'django.db.backends.sqlite3',
+    'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -88,3 +79,7 @@ STATIC_URL = '/static/'
 
 # Production
 STATIC_ROOT = '/django-envs/1.6.1/static/'
+
+# Use production.py for production-specific settings to override things here.
+if os.path.isfile('production.py'):
+  from production import *

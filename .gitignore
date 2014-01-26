@@ -1,8 +1,9 @@
 *.pyc
-staticfiles
 *.swp
 *.vim
+*.sqlite3
 .DS_Store
+staticfiles
 
 production.py
 secret.py
