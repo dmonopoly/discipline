@@ -1,9 +1,8 @@
 from django.conf.urls import patterns, url
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from discipline_app import views
-
-urlpatterns = patterns('',
-  url(r'^$', views.index, name='index'),
+urlpatterns = patterns('discipline_app.views',
+  url(r'^$', 'index', name='index'),
+  url(r'^signup/$', 'signup', name='signup')
 )
-urlpatterns += staticfiles_urlpatterns()
+# urlpatterns += staticfiles_urlpatterns()
