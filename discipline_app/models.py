@@ -8,7 +8,7 @@ class MyUser(models.Model):
   username = models.CharField(max_length=25)
   ip_address = models.CharField(max_length=25)
   focusing = models.BooleanField(default=False)
-#   last_pass_time = models.DateTimeField()
+  start_time = models.DateTimeField()
 
   def __unicode__(self):
     return "%s | IP: %s | Focusing: %s" % (self.user.username,
@@ -31,9 +31,11 @@ class Block(models.Model):
         self.end_time, self.category)
 
 class Site(models.Model):
-  url = models.CharField(max_length=1000)
+  url = models.CharField(max_length=1000, blank=True)
   hostname = models.CharField(max_length=200)
   created_at = models.DateTimeField(default=timezone.now())
+  visits = models.IntegerField(default=0)
+  name = models.CharField(max_length=20)
 
   def __unicode__(self):
-    return hostname + ", " + url
+    return self.hostname + ", " + self.url
